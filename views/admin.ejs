@@ -1,0 +1,79 @@
+<!-- ! =================  head ================ -->
+
+<%- include('./partials/head.ejs', {title: 'Inicio' , url: './images/CNI_Marchando.webp' })%>
+
+    <body style="background-color: #031333;">
+    
+        <!-- ! =================  Navigation ================ -->
+        <%- include('./partials/header.ejs') %>
+
+            <div class="cni-login-page cni-signup-page pt---80 pb---120">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="login-right-form">
+                                <form action="/admin" method="post" onsubmit="return validarInicioSesion()" novalidate>
+                                    <div class="login-top">
+                                        <h3>Login Admin</h3>
+                                        <p>Solo para administradores</p>
+                                    </div>
+                                    <p>
+                                        <label for="usuario">Usuario</label>
+                                        <input placeholder="usuario" type="text" id="usuario" name="usuario" required>
+                                    </p>
+                                    
+                                    <p>
+                                        <label for="contrasena">Contraseña</label>
+                                        <input placeholder="Contraseña" type="password" id="contrasena" name="contrasena" required>
+                                    </p>
+
+
+                                    
+                                    <button type="submit" id="button" name="submit">Iniciar Sesión <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-arrow-right">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg></button>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ! =================  Footer ================ -->
+            <%- include('./partials/footer.ejs')%>
+                
+
+                <script>
+                    function validarInicioSesion() {
+                        // Obtén los valores de nombre y contrasena
+                        var nombre = document.getElementById('nombre').value;
+                        var contrasena = document.getElementById('contrasena').value;
+
+                        // Validar si nombre o contrasena están vacíos
+                        if (!nombre || !contrasena) {
+                            // Mostrar alerta de error con SweetAlert2
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Por favor, ingresa tanto el nombre como el contrasena.'
+                            });
+                            return false; // Evitar el envío del formulario
+                        }
+
+                        // Si la validación es exitosa, el formulario se enviará normalmente
+                        return true;
+                    }
+                </script>
+
+
+
+    </body>
+
+    </html>

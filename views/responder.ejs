@@ -1,0 +1,49 @@
+<!-- ! =================  head ================ -->
+<%- include('./partials/head.ejs', { title: 'Modificar Fecha', url: './images/CNI_Marchando.webp' }) %>
+
+<body>
+    <!-- ! =================  Navigation ================ -->
+    <%- include('./partials/header.ejs') %>
+    <div class="cni-login-page cni-signup-page">
+        <div class="container">
+            <div class="row">
+                    <div class="login-right-form">
+                        <form action="/responder-comentario/<%= comentarioId %>" method="post"  novalidate>
+                            <div class="login-top">
+                                <h3>Modificar Comentario</h3>
+                            </div>
+                            <p>
+                                <label for="NSecretaria">Nombre de la Secretaria</label>
+                                <input type="text" class="form-control" id="NSecretaria" name="NSecretaria" value="<%= NSecretaria %>" required>
+                            </p>
+                            <p>
+                                <label for="SResponde">Secretaria Responde</label>
+                                <input type="text" class="form-control" id="SResponde" name="SResponde" value="<%= SResponde %>" required>
+                            </p>
+                            <button type="submit" id="button" name="submit">Responder <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-arrow-right">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></button>
+                        </form>
+                        
+                        
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ! =================  Footer ================ -->
+    <%- include('./partials/footer.ejs') %>
+
+    <script>
+        // Puedes agregar scripts adicionales aquí si es necesario
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!-- ! =================  head ================ -->
+
+<%- include('./partials/head.ejs', {title: 'Horario' , url: './images/CNI_Marchando.webp' })%>
+
+    <body style="background-color: #031333;">
+        <!-- ! =================  Navigation ================ -->
+        <%- include('./partials/header.ejs') %>
+            <!-- contenido #1 el titulo -->
+            <div style="height: 800px;background-color: #ffffff82 !important;"
+                class="cni_populars_topics cni_populars_topics2 cni_populars_topics_about pb---80">
+                <div class="container">
+                    <div class="principal">
+                        <div class="c-principal">
+                            <img class="hero3__shape-1 imagen-izquierda" src="/images/logo.webp"
+                                alt="Banner shape image">
+                            <div class="texto-derecha">
+                                <h1 id="titulo">Fechas Cívicas</h1>
+                                <h2>HONOR, GALLARDÍA Y DISCIPLINA</h2>
+                                <a style="margin-top: 50px;" href="#fechas" class="vs-btn wave-btn mt-60">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido #2 colegio nacional de Imperial -->
+            <div id="fechas" style="background-color: #031333; padding-bottom: initial;"
+                class="cni_populars_topics cni_populars_topics2 cni_populars_topics_about ">
+                <div style="background-color: #031333; padding-bottom: initial;"
+                    class="cni__title__section cni__title__section-all">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h6>CNI</h6>
+                            <h2 class="cni__tittle text-white animacion-texto">Celebraciones </h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- horario.ejs -->
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                <% fechasCivicas.forEach(function(fecha) {%>
+                    <% const fechaEvento=new Date(fecha.fecha); %>
+                        <% const fechaActual=new Date(); %>
+                            <% if (fechaEvento.getMonth()===fechaActual.getMonth() &&
+                                fechaEvento.getDate()===fechaActual.getDate()) { %>
+                                <div class="card">
+                                    <div class="bg uwu"></div>
+                                    <div class="content">
+                                        <div class="h4">
+                                            <%= fecha.nombre %>
+                                        </div>
+                                        <div class="img pt---10">
+                                            <img width="260px" src="<%= fecha.imagen %>" alt="<%= fecha.nombre %>">
+                                        </div>
+                                        <div class="p pt---10">
+                                            <p>
+                                                <%= fecha.descripcion %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    
+                                    <% }); %>
+
+
+            </div>
+
+            <!-- ! =================  Footer ================ -->
+            <%- include('./partials/footer.ejs')%>
+    </body>
+
+    </html>

@@ -1,0 +1,85 @@
+<!-- ! =================  head ================ -->
+
+<%- include('./partials/head.ejs', {title: 'Noticias' , url: './images/CNI_Marchando.webp' })%>
+<style>
+    .card {
+        position: relative;
+        width: 190px;
+        color: white;
+        height: 260px;
+        background: #ffffff;
+        border-radius: 14px;
+        width: 350px;
+        height: 400px;
+        margin: 25px;
+        padding: 25px;
+    }
+    .cni__title__section-all h2 {
+        font-size: 44px;
+        font-weight: 700;
+        color: #031333 !important;
+        /* margin: 0 0 10px; */
+        line-height: 54px;
+    }
+    .cni__title__section {
+     padding-bottom: 0px;
+    }
+</style>
+    <body>
+        <!-- ! =================  Navigation ================ -->
+        <%- include('./partials/header.ejs') %>
+
+            <!-- contenido #1 el titulo -->
+            <div style="height: 780px;"
+                class="cni_populars_topics cni_populars_topics2 cni_populars_topics_about pb---80">
+                <div class="container">
+                    <div class="principal">
+                        <div class="c-principal">
+                            <img class="hero3__shape-1 imagen-izquierda" src="/images/logo.webp"
+                                alt="Banner shape image">
+                            <div class="texto-derecha">
+                                <h1>Noticias</h1>
+                                <h2>la información del colegio</h2>
+                                <a style="margin-top: 50px;" href="#" class="vs-btn wave-btn mt-60">Infórmate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ! =================  Fecha Slider ================= -->
+
+            <%- include('./partials/fecha_slider.ejs')%>
+
+                <!-- Contenido #3 talleres cni -->
+                <div style="background-color: #F2F1EF;" class="overview-section-seven pt---90 pb---90">
+                    
+                    <div class="container">
+                        <div 
+                    class="cni__title__section cni__title__section-all">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h6>CNI</h6>
+                            <h2 class="cni__tittle text-white animacion-texto">Noticias </h2>
+                        </div>
+                    </div>
+                </div>
+                        <div class="row justify-content-between align-items-center">
+                            <div class="container">
+                                <div class="row" id="newsContainer">
+                                    <!-- Aquí se mostrarán las noticias -->
+                                </div>
+                            </div>
+                            <iframe src="" frameborder="0"></iframe>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ! =================  Footer ================ -->
+                <%- include('./partials/footer.ejs')%>
+                <script src="/js/bot.js"></script>
+    </body>
+
+    </html>

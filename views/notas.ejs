@@ -1,0 +1,607 @@
+<!-- ! =================  head ================ -->
+
+<%- include('./partials/head.ejs', {title: 'Gestión' , url: './images/CNI_Marchando.webp' })%>
+
+    <body>
+        <style>
+
+            table{
+                margin: 10px auto;
+                
+            }
+    
+            tr, td{
+                padding: 0 50px;
+                border: 1px inset ;
+            }
+    
+     
+    
+       
+    
+            .hoverme {
+                text-align: center;
+                padding: 10px 0;
+                cursor: none;
+                position: relative;
+            }
+    
+    
+            .hoverme i {
+                position: absolute;
+                display: block;
+                left: 50%;
+                top: 0;
+                width: 5px;
+                height: 10px;
+                background: red;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(1) {
+                transform: translate3d(88px, -13px, 0) rotate(198deg);
+                background: #ff00d5;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(2) {
+                transform: translate3d(90px, 57px, 0) rotate(318deg);
+                background: #88ff00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(3) {
+                transform: translate3d(52px, -45px, 0) rotate(45deg);
+                background: #eeff00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(4) {
+                transform: translate3d(30px, 35px, 0) rotate(278deg);
+                background: #33ff00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(5) {
+                transform: translate3d(-26px, -67px, 0) rotate(200deg);
+                background: #ff00ae;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(6) {
+                transform: translate3d(-52px, -53px, 0) rotate(274deg);
+                background: #99ff00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(7) {
+                transform: translate3d(84px, -38px, 0) rotate(211deg);
+                background: #5100ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(8) {
+                transform: translate3d(52px, 22px, 0) rotate(249deg);
+                background: #00aeff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(9) {
+                transform: translate3d(21px, 64px, 0) rotate(136deg);
+                background: #aeff00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(10) {
+                transform: translate3d(37px, 84px, 0) rotate(286deg);
+                background: #00eaff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(11) {
+                transform: translate3d(73px, 71px, 0) rotate(223deg);
+                background: #ffbb00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(12) {
+                transform: translate3d(35px, -93px, 0) rotate(266deg);
+                background: #00ff04;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(13) {
+                transform: translate3d(50px, -7px, 0) rotate(303deg);
+                background: #aeff00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(14) {
+                transform: translate3d(-47px, 41px, 0) rotate(338deg);
+                background: #0040ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(15) {
+                transform: translate3d(-57px, -96px, 0) rotate(107deg);
+                background: #5900ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(16) {
+                transform: translate3d(58px, 54px, 0) rotate(79deg);
+                background: #ff00b7;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(17) {
+                transform: translate3d(87px, 6px, 0) rotate(111deg);
+                background: #d900ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(18) {
+                transform: translate3d(13px, -60px, 0) rotate(260deg);
+                background: #ff00d9;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(19) {
+                transform: translate3d(10px, 72px, 0) rotate(337deg);
+                background: #91ff00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(20) {
+                transform: translate3d(-2px, -1px, 0) rotate(135deg);
+                background: blue;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(21) {
+                transform: translate3d(-24px, -20px, 0) rotate(216deg);
+                background: #ff4000;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(22) {
+                transform: translate3d(-41px, -13px, 0) rotate(148deg);
+                background: #00ff26;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(23) {
+                transform: translate3d(-60px, 24px, 0) rotate(341deg);
+                background: #ff6200;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(24) {
+                transform: translate3d(-16px, -53px, 0) rotate(261deg);
+                background: #e1ff00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(25) {
+                transform: translate3d(78px, -8px, 0) rotate(42deg);
+                background: #2600ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(26) {
+                transform: translate3d(-39px, -81px, 0) rotate(352deg);
+                background: #00bbff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(27) {
+                transform: translate3d(-34px, -34px, 0) rotate(266deg);
+                background: #88ff00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(28) {
+                transform: translate3d(19px, 71px, 0) rotate(310deg);
+                background: #5100ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(29) {
+                transform: translate3d(64px, -71px, 0) rotate(351deg);
+                background: #00ff99;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(30) {
+                transform: translate3d(31px, -73px, 0) rotate(352deg);
+                background: #ff00d9;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(31) {
+                transform: translate3d(-49px, -1px, 0) rotate(83deg);
+                background: #00ff4d;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(32) {
+                transform: translate3d(-94px, -41px, 0) rotate(53deg);
+                background: #3c00ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(33) {
+                transform: translate3d(20px, -11px, 0) rotate(17deg);
+                background: #00ffd9;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(34) {
+                transform: translate3d(-13px, -9px, 0) rotate(79deg);
+                background: #00ffc8;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(35) {
+                transform: translate3d(2px, 37px, 0) rotate(237deg);
+                background: #ff1100;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(36) {
+                transform: translate3d(70px, -68px, 0) rotate(251deg);
+                background: #00ff44;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(37) {
+                transform: translate3d(-79px, 66px, 0) rotate(57deg);
+                background: #ff00ae;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(38) {
+                transform: translate3d(64px, -65px, 0) rotate(24deg);
+                background: #00c8ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(39) {
+                transform: translate3d(61px, -89px, 0) rotate(78deg);
+                background: #2f00ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(40) {
+                transform: translate3d(-62px, 31px, 0) rotate(212deg);
+                background: #8000ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(41) {
+                transform: translate3d(89px, -11px, 0) rotate(352deg);
+                background: #0055ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(42) {
+                transform: translate3d(83px, 88px, 0) rotate(105deg);
+                background: #00ff3c;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(43) {
+                transform: translate3d(-71px, 7px, 0) rotate(359deg);
+                background: #04ff00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(44) {
+                transform: translate3d(-93px, 61px, 0) rotate(314deg);
+                background: #ff5e00;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(45) {
+                transform: translate3d(68px, 40px, 0) rotate(32deg);
+                background: #ff002b;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(46) {
+                transform: translate3d(-54px, 15px, 0) rotate(164deg);
+                background: #0004ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(47) {
+                transform: translate3d(-86px, 78px, 0) rotate(183deg);
+                background: #6200ff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(48) {
+                transform: translate3d(-86px, -72px, 0) rotate(209deg);
+                background: #ff0080;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(49) {
+                transform: translate3d(-4px, 20px, 0) rotate(186deg);
+                background: #ff00ee;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            .hoverme:hover i:nth-of-type(50) {
+                transform: translate3d(-30px, 10px, 0) rotate(42deg);
+                background: #00aaff;
+                animation: bang 700ms ease-out forwards;
+                opacity: 0;
+            }
+    
+            @keyframes bang {
+                from {
+                    transform: translate3d(0, 0, 0);
+                    opacity: 1;
+                }
+            }
+        </style>
+        <!-- ! =================  Navigation ================ -->
+        <%- include('./partials/header.ejs') %>
+
+
+            <% if (estudiante) { %>
+                <% const fechaNacimiento=new Date(estudiante.FechaNacimiento); %>
+                    <% const fechaHoy=new Date(); %>
+                        <% const esCumpleaños=fechaNacimiento.getDate()===fechaHoy.getDate() &&
+                            fechaNacimiento.getMonth()===fechaHoy.getMonth(); %>
+                           
+
+                                    <div class="cni-breadcrumbs">
+                                        <div class="breadcrumbs-wrap">
+                                            <img class="desktop" src="/images/1-back.jpg" alt="Breadcrumbs">
+                                            <img class="mobile" src="/images/1-back.jpg" alt="Breadcrumbs">
+                                            <div class="breadcrumbs-inner">
+                                                <div class="container">
+                                                    <div class="breadcrumbs-text">
+                                                        <h1 class="breadcrumbs-title">Profile</h1>
+                                                        <div class="back-nav">
+                                                            <ul>
+                                                                <% if (esCumpleaños) { %>
+                                <div class='hoverme'>
+                                    <!-- <p></p> -->
+                                    <li style="font-size: 20px;">Feliz Cumpleaños <%= estudiante.NombreEstudiante %> 🎂!</li>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                                <% }else { %>
+                                    <li style="font-size: 20px;">Sistemas de Notas</li>
+                                <% } %>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="profile-top back__course__area pt---100 pb---50">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <img src="/images/profileicon.jpg" alt="profile">
+                                                    <a href="/logout" class="follows">Cerrar Sesión</a>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <ul class="user-section">
+                                                        <li class="user">
+                                                            <span class="name">Estudiante:</span><em>
+                                                                <%= estudiante.NombreEstudiante %>
+                                                                    <%= estudiante.ApellidoEstudiante %>
+                                                            </em>
+                                                        </li>
+                                                        <li>Teléfono<em><%=estudiante.Telefono %></em> </li>
+                                                        <li>Email:<em><%=estudiante.Email %></em> </li>
+                                                        <li>Grado:<em><%= estudiante.NombreGrado %></em> </li>
+                                                        <li>Sección:<em>
+                                                                <%= estudiante.NombreSeccion %>
+                                                            </em> </li>
+
+                                                    </ul>
+                                                    <h3>Biography</h3>
+
+                                                    <p>Only a quid me old mucker squiffy tomfoolery grub
+                                                        cheers ruddy cor blimey guvnor in my
+                                                        flat, up the duff Eaton car boot up the kyver pardon
+                                                        you A bit of how's your father
+                                                        David skive off sloshed, don't get shirty with me
+                                                        chip shop vagabond crikey bugger
+                                                        Queen's English chap. Matie boy nancy boy bite your
+                                                        arm off up the kyver old no biggie
+                                                        fantastic boot, David have it show off show off pick
+                                                        your nose and blow off lost the
+                                                        plot porkies bits and bobs only a quid bugger all
+                                                        mate.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>
+
+                                        <!--=================  Popular Topics Section Start Here ================= -->
+                                        <div class="cni_populars_topics pb---120">
+                                            <div class="container">
+                                                <div class="cni__title__section cni__title__section2">
+                                                    <div class="row align-v">
+                                                        <div class="col-md-8">
+                                                            <h2 class="cni__tittle">Calificaciones de Tus Cursos
+                                                            </h2>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row pt---30">
+                                                    <% for (let curso of notasPorCurso) { %>
+                                                    <div class="col-md-3">
+                                                        <div class="item__inner" style="padding: 15px 0px;">
+                                                            <div class="cni-content">
+                                                                <h4 class="cni-title" style="margin: 10px 0;"><a href="coureses-grid.html"><%= curso.NombreCurso %></a></h4>
+                                                                <p>Profesor: <%= curso.NombreProfesor %></p>
+                                                                <table>
+                                                                    <tr>
+                                                                        <th>Nota</th>
+                                                                        <th>Parcial</th>
+                                                                    </tr>
+                    
+                                                                    <% for (let nota of curso.Notas) { %>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <%= nota.Nota %>
+                                                                            </td>
+                                                                            <td>
+                                                                                <%= nota.Parcial %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <% } %>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <% } %>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                           
+                                            
+                                                <!--=================  Popular Topics Section End Here ================= -->
+                                                <!-- FINAL DE TODO EL CONTENIDO -->
+    
+    <%- include('./partials/footer.ejs')%>
+
+
+    <script>
+        function validarInicioSesion() {
+            // Obtén los valores de nombre y DNI
+            var nombre = document.getElementById('nombre').value;
+            var dni = document.getElementById('dni').value;
+
+            // Validar si nombre o DNI están vacíos
+            if (!nombre || !dni) {
+                // Mostrar alerta de error con SweetAlert2
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Por favor, ingresa tanto el nombre como el DNI.'
+                });
+                return false; // Evitar el envío del formulario
+            }
+
+            // Si la validación es exitosa, el formulario se enviará normalmente
+            return true;
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

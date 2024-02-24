@@ -1,0 +1,235 @@
+<!-- ! =================  head ================ -->
+
+<%- include('./partials/head.ejs', {title: 'Talleres' , url: './images/CNI_Marchando.webp' })%>
+
+    <body>
+        <!-- ! =================  Navigation ================ -->
+        <%- include('./partials/header.ejs') %>
+
+            <!-- ! =================  Contenido # 1 Contenido Principal================= -->
+
+            <div style="height: 780px;"
+                class="cni_populars_topics cni_populars_topics2 cni_populars_topics_about pb---80">
+                <div class="container">
+                    <div class="principal">
+                        <div class="c-principal">
+                            <img class="hero3__shape-1 imagen-izquierda" src="/images/logo.webp"
+                                alt="Banner shape image">
+                            <div class="texto-derecha">
+                                <h1>Talleres</h1>
+                                <h2 style="color: #031333 ;">Nuestro colegio cuenta con buenos talleres. </h2>
+
+                                <a style="margin-top: 50px;" href="https://youtu.be/Wv4JeFgALGU"
+                                    class="vs-btn wave-btn mt-60">Infórmate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ! =================  Fecha Slider ================= -->
+
+            <%- include('./partials/fecha_slider.ejs')%>
+
+                <!-- ! =================  Contenido # 2 Contenido de Taller ================= -->
+
+                <div id="carpinteria" style="background-color: #031333;"
+                    class="cni_populars_topics cni_populars_topics2 cni_populars_topics_about pb---80">
+                    <div style="background-color: #031333;" class="cni__title__section cni__title__section-all">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h6 class="animate__animated animate__headShake animate__infinite">CNI</h6>
+                                <h2 class="cni__tittle text-white">Carpinteria</h2>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row pt---30 justify-content-center">
+                            <div class="col-md-4">
+                                <div class="item__inner">
+                                    <div class="icon">
+                                        <img src="\images\talleres-cni\carpinteria.jpg" alt="Icon image">
+                                    </div>
+                                    <div class="cni-content text-center">
+                                        <h3 class="cni-title"><a href="#">Carpinteria</a></h3>
+                                        <p> Este taller comprende la elaboracion , montaje , instalacion
+                                            y reparacion de elementos de madera , tanto piezas individuales(moviliario)
+                                            como componentes fijos o moviles para obras(puertas , ventanas , marcos ,
+                                            etc.)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ! =================  Contenido # 3 Contenido de Taller ================= -->
+
+                <div id="computacion" style="background-color: #f2f1EF;"
+                    class="cni_populars_topics cni_populars_topics2 cni_populars_topics_about pb---80">
+                    <div style="background-color: #F2F1EF;" class="cni__title__section cni__title__section-all">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h6 class="animate__animated animate__headShake animate__infinite">CNI</h6>
+                                <h2 class="cni__tittle">Computacion</h2>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row pt---30 justify-content-center">
+                            <div class="col-md-4">
+                                <div class="item__inner">
+                                    <div class="icon">
+                                        <img src="\images\talleres-cni\centro de compúto.png" alt="Icon image">
+                                    </div>
+                                    <div class="cni-content text-center">
+                                        <h3 class="cni-title"><a href="#">Computacion</a></h3>
+                                        <p>En el taller de Computacion e informatica se trabaja desde las destrezas
+                                            basicas y necesarias para el uso del raton y teclado hasta el manejo
+                                            de las herramientas y opciones que ofrecen los diferentes programas
+                                            de windows.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ! =================  Contenido # 5 Contenido de Comentario ================= -->
+
+                <div style="background-color: #031333;" id="cni-contact" class="cni-contact-page pt---60">
+                    <div class="container">
+                        <div class="row pb---96">
+                            <div class="col-lg-8">
+                                <div class="cni-blog-form">
+                                    <h2 class="contact-title text-white">Coméntenos! <br>Tu opinión es Importante
+                                    </h2>
+                                    <div id="blog-form" class="blog-form">
+                                        <div id="form-messages"></div>
+                                        <form id="contact-form" action="/guardar-comentario" method="post" novalidate>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="back-input">
+                                                        <input type="text" name="nombre_completo" id="nombre_completo"
+                                                            placeholder="Nombre Completo">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 pdl-5">
+                                                    <div class="back-input">
+                                                        <input type="email" name="correo" id="correo"
+                                                            placeholder="Email" pattern=".*" novalidate>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="back-textarea">
+                                                        <textarea name="comentario" id="comentario"
+                                                            placeholder="Comentario" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <button type="submit" class="vs-btn wave-btn" style="
+                                                background: white;
+                                                color: #031333;">Enviar<svg xmlns="http://www.w3.org/2000/svg"
+                                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round"
+                                                            class="feather feather-arrow-right">
+                                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                                        </svg></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 pt---110">
+                                <img src="https://i0.wp.com/mangasman.com/wp-content/uploads/2017/03/recomendaciones.png?fit=1111%2C783"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ! =================  Contenido # 5 Contenido los Comentarios ================= -->
+
+                <div style="background-color: #F2F1EF;" class="about__area about2__area p-relative pt---50 pb---120">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2 class="cni__tittle">Comentarios</h2>
+                        </div>
+                    </div>
+                    <div class="container about__area-width">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="blog-single-inner">
+                                    <div class="blog-content">
+                                        
+                                        <% if (comentarios.length> 0) { %>
+                                            <div class="post-content">
+                                                <% comentarios.forEach(comentario=> { %>
+                                                    <div class="post-container">
+                                                        <img src="https://th.bing.com/th/id/R.a5268e5f7779f85c02b1d8ad848ac113?rik=Mtp4PTwOp5wuCw&pid=ImgRaw&r=0"
+                                                            alt="user" class="profile-photo-md pull-left">
+                                                        <div class="post-detail">
+                                                            <div class="user-info">
+                                                                <h5><a href="#" class="profile-link">
+                                                                        <%= comentario.nombre_completo %>
+                                                                    </a> <span class="following">Fecha: <%=
+                                                                            comentario.fecha_hora.toLocaleString() %>
+                                                                            </span>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="line-divider"></div>
+                                                            <div class="post-text">
+                                                                <p>
+                                                                    <%= comentario.comentario %>
+                                                                        <i class="em em-anguished"></i> <i
+                                                                            class="em em-anguished"></i> <i
+                                                                            class="em em-anguished"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="line-divider"></div>
+                                                            <% if (comentario.NSecretaria && comentario.SResponde) { %>
+                                                                <div class="post-comment">
+                                                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                                                        alt="" class="profile-photo-sm">
+                                                                    <p><a href="#" class="profile-link">Secretario:
+                                                                            <%= comentario.NSecretaria %>
+                                                                        </a>
+                                                                        <%= comentario.SResponde %>
+                                                                    </p>
+                                                                </div>
+                                                                <% } %>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <% }); %>
+                                            </div>
+                                            <% } else { %>
+                                                <p>No hay comentarios disponibles.</p>
+                                                <% } %>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ! =================  Footer ================ -->
+                <%- include('./partials/footer.ejs')%>
+
+
+
+                    <script src="/javascript/validacionComentario.js"></script>
+    </body>
+
+    </html>

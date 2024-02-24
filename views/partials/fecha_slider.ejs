@@ -1,0 +1,26 @@
+<% if (fechasCivicas.some(fecha => {
+    const fechaEvento = new Date(fecha.fecha);
+    const fechaActual = new Date();
+    return fechaEvento.getMonth() === fechaActual.getMonth() &&
+           fechaEvento.getDate() === fechaActual.getDate();
+  })) { %>
+    <div style="background-color: #031333;" id="ver-mas" class="cni_populars_topics cni_populars_topics2 cni_populars_topics_about">
+      <div class="carrusel">
+        <div class="carrusel-items">
+          <% fechasCivicas.forEach(function(fecha) { %>
+            <% const fechaEvento = new Date(fecha.fecha); %>
+            <% const fechaActual = new Date(); %>
+            <% if (fechaEvento.getMonth() === fechaActual.getMonth() &&
+                fechaEvento.getDate() === fechaActual.getDate()) { %>
+              <div class="carrusel-item">
+                <div class="cni-content">
+                  <h5 class="cni-title"><a href="/horario"><%= fecha.nombre %></a></h5>
+                  <p><%= fecha.descripcion %></p>
+                </div>
+              </div>
+            <% } %>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  <% } %>

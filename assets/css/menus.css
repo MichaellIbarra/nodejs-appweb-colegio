@@ -1,0 +1,275 @@
+/* Responsive Menu Here
+----------------------------------------*/
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.cni-menus {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.cni-menus li{
+    list-style: none;
+}
+.cni-menus li ul {
+    display:none;
+}
+.cni-menus > li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    float: left;
+}
+.cni-menus li > a {
+    color:#c0c0c0;
+}
+.cni-menus > li > a {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 32px 30px 32px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+body.cni-one-page .cni-menus > li > a {
+    padding: 26px 16px 26px 16px;
+}
+
+.cni-menus li.menu-active > a {
+    color:#0d1e50;
+}
+
+
+.cni-menus li ul.sub-menu li.menu-active > a {
+    color:#0d1e50;
+}
+
+
+.cni-menus li div.menu-active {
+    position: relative;
+}
+
+
+.cni-menus > li > ul.sub-menu {
+    list-style: none;
+    clear: both;
+    margin: 0;
+    position: absolute;
+    z-index: 999;
+    border-radius: 0 0 4px 4px;
+}
+.cni-menus li ul.sub-menu {
+    background: #fff;
+    padding: 18px 0 18px;
+    box-shadow: 30px 0 30px rgba(8,10,41,.10);
+}
+.cni-menus li ul.sub-menu > li {
+    width: 200px;
+}
+.cni-menus li{
+    position: relative;
+}
+.cni-menus li ul.sub-menu li a {
+    display: block;
+    margin: 0px 0px;
+    padding: 5px 35px 5px 35px;
+    text-decoration: none;
+    font-weight: normal;
+    background: none;
+    color: #0a0a0a;
+}
+
+.cni-menus > li > ul.sub-menu > li {
+    position: relative;
+}
+.cni-menus > li > ul.sub-menu > li ul.sub-menu {
+    position: absolute;
+    left: 100%;
+    top: 0px;
+    display: none;
+    list-style: none;
+}
+.cni-menus > li > ul.sub-menu > li ul.sub-menu > li ul.sub-menu {
+    position: absolute;
+    left: 100%;
+    top: 0px;
+    display: none;
+    list-style: none;
+}
+
+.cni-menus > li.edge > ul.sub-menu{
+    right: 0;
+}
+
+.cni-menus li ul.sub-menu li.edge ul.sub-menu,
+.cni-menus > li > ul.sub-menu > li.edge ul.sub-menu > li.edge ul.sub-menu {
+    left: -100% !important;
+}
+
+/* Menu Toggle Btn
+----------------------------------------*/
+
+
+
+.menu-toggle .icon-bar {
+    display: block !important;
+    width: 25px;
+    height: 2px;
+    background-color: #fff !important;
+    margin: 6px 0;
+    transition: all 500ms ease;
+}
+
+.menu-toggle .icon-bar:nth-child(1){
+    width: 16px;
+    margin-left: auto;
+}
+
+.menu-toggle .icon-bar:nth-child(2){
+    width: 20px;
+    margin-left: auto;
+}
+
+.menu-toggle .icon-bar:hover {
+    background-color: #fff !important;
+}
+.menu-toggle:hover span.icon-bar{
+    width: 25px !important;
+}
+.menu-toggle #menu-btn {
+    float: right;
+    background: #202020;
+    border: 1px solid #0C0C0C;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    clear: right;
+    display: none;
+}
+.hide-menu {
+    display: none;
+}
+
+
+
+/* Responsive Menu Styles
+----------------------------------------*/
+/*Note: change the max-width asper your requirment and change the same in aceResponsiveMenu({resizeWidth: "991" }) function*/
+
+@media screen and (min-width: 992px) {
+    .cni-main-menu nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .cni-menus li ul.sub-menu li a {
+        padding: 12px 40px 12px 50px;
+    }
+    .menu-toggle #menu-btn{
+        display: block;
+    }
+    .cni-menus .has-sub .arrow{
+        width: 55px;
+        height: 54px;
+        display: block;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        z-index: 99;     
+        cursor: pointer;  
+        border-left: 1px solid #f5f3f3;                   
+    }
+
+    .cni-menus .has-sub .arrow:after{
+        content: "";
+        position: absolute;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 10px solid #0d1e50;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);        
+    }
+
+    .cni-menus .has-sub.menu-active > .arrow:after{
+        content: "";
+        position: absolute;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 10px solid #0d1e50;
+        border-top: 0px solid #0d1e50;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ul[data-menu-style="vertical"] , ul[data-menu-style="accordion"],
+    ul[data-menu-style="vertical"] li ul.sub-menu {
+        width: 100% !important;
+    } 
+    .cni-menus {
+        position: absolute;
+        width:100%;
+        box-shadow: none;
+        margin-bottom: 12px;
+    }
+    .cni-menus > li {
+        border-bottom: 1px solid #f5f3f3;
+       float: none;       
+    }
+    .cni-menus > li ul.sub-menu > li{
+        border-top: 1px solid #f5f3f3;
+       float: none;       
+    }    
+
+    .cni-menus > li ul.sub-menu > li:last-child{
+        border-bottom: none;
+    }
+
+    .cni-menus  li {
+        position: relative;
+        background: #fff;
+    }  
+    .cni-menus li a:hover {
+        background: #f5f3f3 !important;
+        color: #0d1e50 !important;
+    }
+    .cni-menus li > .cni-current-page{
+        color: #3270FC !important;
+    }
+    .cni-menus > li:first-child {
+        border-top: none;
+    }
+
+    .cni-menus li ul.sub-menu > li {
+        width: 100%;
+    }
+    .cni-menus li ul.sub-menu li ul.sub-menu li a{
+        padding-left: 60px;
+    }  
+    .cni-menus li ul.sub-menu li ul.sub-menu li ul.sub-menu li a{
+        padding-left: 80px;
+    }  
+    .cni-menus > li > ul.sub-menu {
+        position: static;
+    }
+    .cni-menus > li > ul.sub-menu > li ul.sub-menu {
+        position: static;
+    }
+    .cni-menus > li > ul.sub-menu > li ul.sub-menu > li ul.sub-menu {
+        position: static;
+    }
+} 
+.cni-sticky .topbar-area.style1{
+    display: none;
+}

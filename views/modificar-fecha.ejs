@@ -1,0 +1,58 @@
+<!-- ! =================  head ================ -->
+<%- include('./partials/head.ejs', { title: 'Modificar Fecha', url: './images/CNI_Marchando.webp' }) %>
+
+<body>
+    <!-- ! =================  Navigation ================ -->
+    <%- include('./partials/header.ejs') %>
+    <div class="cni-login-page cni-signup-page">
+        <div class="container">
+            <div class="row">
+                    <div class="login-right-form">
+                        <form action="/guardar-modificacion/<%= fechaId %>" method="post" onsubmit="return validarRegistroFecha()" novalidate>
+                            <div class="login-top">
+                                <h3>Modificar Fecha Cívica
+                                </h3>
+                            </div>
+                            <p>
+                                <label for="imagen">Imagen</label>
+                                <input type="text" class="form-control" id="imagen" name="imagen" value="<%= imagen %>" required>
+
+                            </p>
+                            <p>
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" value="<%= nombreDeLaFecha %>" required>
+                            </p>
+                            <p>
+                                <label for="descripcion">Descripción</label>
+                                <textarea class="form-control" id="descripcion" name="descripcion"><%= descripcionDeLaFecha %></textarea>
+                            </p>
+                            <p>
+                                <label for="fecha">Fecha</label>
+                                <input type="date" class="form-control" id="fecha" name="fecha" value="<%= fechaDeLaFecha %>" required>
+                            </p>
+                            <button type="submit" id="button" name="submit">Modificar <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-arrow-right">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></button>
+                        </form>
+                        
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ! =================  Footer ================ -->
+    <%- include('./partials/footer.ejs') %>
+
+    <script>
+        // Puedes agregar scripts adicionales aquí si es necesario
+    </script>
+</body>
+
+</html>

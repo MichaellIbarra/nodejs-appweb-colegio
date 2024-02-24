@@ -1,0 +1,157 @@
+<%- include('./partials/head.ejs', {title: 'Registrar Alumno', url: './images/CNI_Marchando.webp' })%>
+
+<body style="background-color: #031333;">
+    <!-- ! ================= Navigation ================ -->
+    <%- include('./partials/header.ejs') %>
+
+    <div class="cni-login-page cni-signup-page pt---80 pb---120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="login-right-form">
+                        <form action="/registrar" method="GET">
+                             <div class="login-top">
+                                <h3>Registro Estudiante</h3>
+                                <p>Solo para los estudiantes que no tienen registro</p>
+                            </div>
+                            <p>
+                                <label>DNI</label>
+                             
+                                <input type="text" id="dni" name="dni" required>
+                            </p>
+                            <button type="submit">Buscar</button>
+                        </form>
+                    
+                       <!-- ... (código existente) ... -->
+
+<% if (typeof data !== 'undefined' && data !== null) { %>
+<% } else if (typeof error !== 'undefined' && error !== null) { %>
+    <p>Error: <%= error %></p>
+<% } %>
+
+<form action="/regisstrar" method="post" onsubmit="return validarregistrar()" novalidate>
+    <p>
+        <label>Nombre</label>
+        <input placeholder="Nombre" id="nombre" name="nombre" required <% if (typeof data !== 'undefined' && data !== null) { %> value="<%= data.dataJson.persona.preNombres %>" <% } %>>
+    </p>
+    <p>
+        <label>Apellido</label>
+        <input placeholder="Apellido" id="apellido" name="apellido" required <% if (typeof data !== 'undefined' && data !== null) { %> value="<%= data.dataJson.persona.apPaterno %> <%= data.dataJson.persona.apMaterno %>" <% } %>>
+    </p>
+    <p>
+        <label>Fecha de Nacimiento</label>
+        <input placeholder="Fecha Nacimiento"  id="fechaNacimiento" name="fechaNacimiento" required 
+        <% if (typeof data !== 'undefined' && data !== null) { %>
+            value="<%= convertirFecha(data.dataJson.persona.feNac) %>"
+        <% } %>>
+    </p>
+    <p>
+        <label>Dirección</label>
+        <input placeholder="Dirección" id="direccion" name="direccion" required <% if (typeof data !== 'undefined' && data !== null) { %> value="<%= data.dataJson.persona.deUbigeoDis %> <%= data.dataJson.persona.deDireccion %>" <% } %>>
+    </p>
+    <p>
+        <label>Genero</label>
+        <select id="genero" name="genero" required>
+            <% if (typeof data !== 'undefined' && data !== null) { %>
+                <% if (data.dataJson.persona.coGenero === "1") { %>
+                    <option value="M" selected>Masculino</option>
+                    <option value="F">Femenino</option>
+                <% } else if (data.dataJson.persona.coGenero === "2") { %>
+                    <option value="M">Masculino</option>
+                    <option value="F" selected>Femenino</option>
+                <% } else { %>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                <% } %>
+            <% } else { %>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            <% } %>
+        </select>
+    </p>
+    
+    
+    <% function convertirFecha(fecha) {
+        const partes = fecha.split('/');
+        if (partes.length === 3) {
+            // El formato debe ser 'YYYY-MM-DD'
+            return `${partes[2]}-${padLeft(partes[1], 2)}-${padLeft(partes[0], 2)}`;
+        }
+        return fecha;
+    } %>
+    
+    <% function padLeft(value, length) {
+        return (value.toString().length < length) ? padLeft('0' + value, length) : value;
+    } %>
+    
+    <p>
+        <label>Teléfono</label>
+        <input placeholder="Teléfono" id="telefono" name="telefono" required>
+    </p>
+
+    <p>
+        <label>Email</label>
+        <input placeholder="Email" type="email" id="email" name="email" required>
+    </p>
+
+    <p>
+        <label>Grado</label>
+        <input placeholder="Grado" id="grado" name="grado" required>
+    </p>
+    <p>
+        <label>Sección</label>
+        <input placeholder="Sección" id="seccion" name="seccion" required>
+    </p>
+
+    <button type="submit" id="button" name="submit">Registrar <svg
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-arrow-right">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+        </svg></button>
+</form>
+
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ! ================= Footer ================ -->
+    <%- include('./partials/footer.ejs')%>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function buscarPersona() {
+    const dni = $('#dni').val();
+    if (dni.length === 8) {
+        const apiUrl = `http://45.232.105.29:8080/registro-renipress-webapp/login.htm?action=buscarPersona&txt_numeroDocumentoIdentidad=${dni}&dat_fechaNacimiento=21/11/2023&cmb_sexo=1&cmb_tipoDocumentoIdentidad=1`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log('Datos de la API:', data);
+
+                // Llenar automáticamente los campos del formulario con los datos obtenidos
+                $('#nombre').val(data.dataJson.persona.preNombres);
+                $('#apellido').val(data.dataJson.persona.apPaterno + ' ' + data.dataJson.persona.apMaterno);
+                $('#fechaNacimiento').val(data.dataJson.persona.feNac);
+                $('#direccion').val(data.dataJson.persona.deDireccion);
+                // ... (rellenar otros campos según sea necesario)
+            })
+            .catch(error => {
+                console.error('Error en la solicitud fetch:', error);
+            });
+    } else {
+        alert('Por favor, ingrese un DNI válido de 8 dígitos.');
+    }
+}
+
+    </script>
+</body>
+
+</html>
