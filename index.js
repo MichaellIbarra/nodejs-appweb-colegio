@@ -1,5 +1,6 @@
 // Importando modulos 
 const express = require("express");
+const RateLimit = require("express-rate-limit");
 const auth = require("./routes/auth");
 const renderizado = require("./routes/renderizado");
 const votar = require("./routes/votar");
@@ -12,6 +13,15 @@ const conex = require("./config/database");
 
 //inicio de server
 const app = express();
+
+// Rate limiter configuration
+const limiter = RateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // max 100 requests per windowMs
+});
+
+// Apply rate limiter to all requests
+app.use(limiter);
 
 //settings
 app.set('port', 3000);
