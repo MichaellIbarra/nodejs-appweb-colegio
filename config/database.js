@@ -5,7 +5,7 @@ const conex = mysql.createConnection({
   host: "localhost",
   database: "cni_crud",
   user: "root",
-  password: "",
+  password: "passwordxd",
 });
 
 conex.connect((err) => {
